@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+header{
+    padding: 1rem; 
+}
+
+h2{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+h1,h2,h3,p,a{
+    padding: 1rem 1.5rem;
+}
+.figure{
+    padding: 1rem 1.5rem;
+}
+
+figcaption{
+    font-size: 14px;
+    padding:0 0 1rem 0;
+    line-height:1.4em;
+}
+
+.intro-section,
+.section-info,
+.section-table,
+.data-section,
+.contact-section,
+.section-footer{
+    padding: 1rem 1.5rem;
+}
+
+.table-container{
+    width: 100%;
+    padding: 1rem 1.5rem;
+}
+
+
+.data-section video{
+    border-radius: 3em;
+    background-color: #000000;
+}
+
+.contact-section img{
+  border-radius: 3em;
+}
+
+.span{
+    font-size: 12px;
+    color: #8d8c8c;
+}
+header li,a{
+    text-decoration: underline;
+    font-size: 12px;
+    color: black;
+}
+
+.intro-section p{
+    font-size: 14px;
+    line-height:1.4em;
+    color: #8d8c8c;
+}
+
+.p{
+    font-size: 14px;
+    line-height:1.4em;
+}
+
+table{
+    width: 100%;
+}
+
+
+.caption{
+    caption-side: top;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+
+
+th,td,tr{
+    text-align: center;
+    padding: 1em;
+    border: 1.4px solid #333232;
+}
+
+form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1rem 1.5rem;
+}
+
+input, select, textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333232;
+    border-radius: 4px;
+}
+
+
+
+.radio,.checkbox{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    p{
+        padding-left: 0;
+    }
+}
+
+.checkbox-group,.radio-group{
+    display: flex;
+    gap: 20px;
+    padding-bottom: 16px;
+    
+}
+
+.radio-span,.checkbox-span{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    gap: 10px;
+}
+
+input[type="radio"], input[type="checkbox"]{
+    width: 10px;
+}
+
+button{
+    width: 30%;
+    padding: 10px;
+    background-color: #B5B5B5;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.link-group{
+     padding: 0.5rem 2.5rem;
+}
+
+
+ .section-footer a{
+        margin-bottom: 1em;
+        font-size: 12px;
+        text-decoration: none;
+        color: black;
+    }
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    font-size: 12px;
+    span{
+        margin:0 1em;
+    };
+    p{
+        padding: 8px 1.5rem;
+        
+    };
+
+}
+
+.hr{
+  margin:0 3rem;
+}
