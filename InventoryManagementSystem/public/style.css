@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background: #ffffff;
+    width: 40vw;
+    height: 60%;
+    padding: 24px 32px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    font-size: 13px;
+
+    /* Hide scrollbar but keep scrolling functional */
+    scrollbar-width: none;       /* Firefox */
+    -ms-overflow-style: none;    /* IE/Edge legacy */
+}
+
+.container::-webkit-scrollbar {
+    display: none;               /* Chrome, Safari, Edge (Chromium) */
+}
+
+.container::before {
+    content: "Student Registration";
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #444;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 7px 10px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+.form-group select {
+    background: #fff;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 9px;
+    margin-top: 6px;
+    background: #667eea;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background: #5563d3;
+}
+
+button[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 80vw;
+        height: auto;
+        padding: 20px;
+    }
+}

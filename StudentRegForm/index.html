@@ -1,0 +1,187 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script defer src="https://kit.fontawesome.com/79e3c5887d.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="form.css">
+        <title>Student Registration Form</title>
+    </head>
+    <body>
+        <div class="header">
+            <i class="fa-solid fa-graduation-cap head-icon"></i>
+            <h1>Student Registration Form</h1>
+            <h3>Complete the steps below to enroll in your academic program </h3>
+            <ul class="linkgroup ">
+            <li class="reglink">
+                <i class="fa-solid fa-lock reglink-active acc"></i>
+                Account
+            </li>
+            <hr>
+            <li class="reglink">
+                <i class="fa-solid fa-user pas"></i>
+                Personal
+            </li>
+            <hr>
+            <li class="reglink">
+                <i class="fa-solid fa-graduation-cap acd"></i>
+                Academic
+            </li>
+            <hr>
+            <li class="reglink">
+                <i class="fa-solid fa-check-circle rev"></i>
+                Review
+            </li>
+        </ul>
+         </div>
+        <form id="form">
+
+    <!-- ACCOUNT -->
+    <fieldset class="account active">
+        <legend>Account Information</legend>
+        <h3>Step 1: Account Details</h3>
+        <label for="username">First Name</label>
+        <input id="username" type="text" name="username" required>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+
+        <div class="group-div">
+            <label for="password">Password</label>
+            <div class="password-input">    
+            <input type="password" name="password" id="password" required minlength="6">
+            <span class="showpassword"><i class="fa-solid fa-eye eye"></i></span>
+            </div>
+        </div>
+        
+        <div class="group-div">
+            <label for="confirm_password">Confirm Password</label>
+            <div class="password-input">
+                <input type="password" name="confirm_password" id="confirm_password" required>
+                <span class="showpassword"><i class="fa-solid fa-eye eye"></i></span>
+            </div>
+        </div>
+        
+        <div class="btn">
+            <button type="reset">Clear Form</button>
+            <button type="button" class="continue" id="continue-btn">Continue</button>
+        </div>
+    </fieldset>
+
+    <!-- PERSONAL -->
+    <fieldset class="personal">
+        <legend>Personal Information</legend>
+        <h3>Step 2: Personal Details</h3>
+        <label for="fullname">Full Name</label>
+        <input id="fullname" type="text" name="fullname" required>
+
+        <div class="two-col">
+            <div class="input-group">
+                <label for="personalemail">Email</label>
+                <input type="email" name="personalemail" id="personalemail" required>
+            </div>
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" name="phone" id="phone" required>
+            </div>  
+        </div>
+
+        <div class="two-col">
+            <div class="input-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" name="dob" id="dob" required>
+            </div>
+
+            <div class="input-group">
+                <label>Gender</label>
+                <div class="two-col">
+                    <input class="radio" type="radio" name="gender" value="male" required> Male
+                    <input class="radio" type="radio" name="gender" value="female" required> Female
+                </div>
+            </div>
+        </div>   
+
+        <div class="btn">
+            <button type="button" class="back">Back</button>
+            <button type="button" class="continue next-btn">Continue</button>
+        </div>
+    </fieldset>
+
+    <!-- ACADEMIC -->
+    <fieldset class="academic">
+        <legend>Academic Information</legend>
+        <h3>Step 3: Academic Details</h3>
+        <label for="course">Course</label>
+        <select name="course" id="course" required>
+            <optgroup label="Programming">
+                <option value="webdev">Frontend Developer</option>
+                <option value="software">Backend Developer</option>
+            </optgroup>
+            <optgroup label="Design">
+                    <option value="uiux">UI/UX Design</option>
+                    <option value="graphic">Graphic Design</option>
+            </optgroup>
+            <optgroup label="Data">
+                        <option value="datascience">Data Science</option>
+                        <option value="dataanalytics">Data Analytics</option>
+             </optgroup>
+             <optgroup label="Other">
+                <option value="other">Other</option>
+             </optgroup>
+        </select>
+
+        <input type="file" name="photo" required>
+
+        <textarea name="motivation" rows="5" placeholder="Motivation Essay" required></textarea>
+
+        <div class="two-col">
+            <input type="checkbox" name="terms" id="terms" required>
+            <label for="terms">I agree to the terms</label>
+        </div>
+
+        <div class="btn">
+            <button type="button" class="back">Back</button>
+            <button type="button" class="continue">Continue</button>
+        </div>
+    </fieldset>
+
+    <fieldset class="review">
+    <legend>Review Information</legend>
+    <h3>Review your information before submitting</h3>
+
+    <div class="review-box">
+
+        <h4>Account Info</h4>
+        <p><strong>First Name:</strong> <span id="review-username"></span></p>
+        <p><strong>Email:</strong> <span id="review-email"></span></p>
+
+        <h4>Personal Info</h4>
+        <p><strong>Full Name:</strong> <span id="review-fullname"></span></p>
+        <p><strong>Email:</strong> <span id="review-personalemail"></span></p>
+        <p><strong>Phone:</strong> <span id="review-phone"></span></p>
+        <p><strong>Date of Birth:</strong> <span id="review-dob"></span></p>
+        <p><strong>Gender:</strong> <span id="review-gender"></span></p>
+
+        <h4>Academic Info</h4>
+        <p><strong>Course:</strong> <span id="review-course"></span></p>
+        <p><strong>Motivation:</strong> <span id="review-motivation"></span></p>
+
+    </div>
+
+    <div class="btn">
+        <button type="button" class="back">Back</button>
+        <button type="submit">Submit</button>
+    </div>
+</fieldset>
+<section>
+    <h3>Tip 3: Write meaningful alt text</h3>
+    <figure>
+        <img src="Pounded Yam and Egusi soup.jpeg" alt="Comparison showing good alt text example: Screenshot of a pounded yam and egusi soup with shakki , labeled Good Example, next to bad alt text example: A generic image file name, labeled Bad Example. The comparison demonstrates the importance of descriptive, meaningful alt text for accessibility." width="290px" height="200px">
+        <figcaption>Figure 1: Good vs bad alt text</figcaption>
+    </figure>
+</section>
+
+</form>
+        <script src="form.js"></script>
+    </body>
+    </html>
