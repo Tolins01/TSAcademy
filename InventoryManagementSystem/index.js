@@ -5,7 +5,7 @@ const app = express();
 const port = 3000;
 
 let students = loadStudents(); // load existing data on startup
-let nextId = students.length > 0 ? Math.max(...students.map(s => s.id)) + 1 : 1;
+let nextId = students.length > 0 ? Math.random() * students[0].id + 1 : 1;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -14,12 +14,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// ---------- VIEW ROUTE ----------
-app.get('/student-portal', (req, res) => {
+// VIEW ROUTE 
+app.get('/api/student-portal', (req, res) => {
   res.render('home');
 });
 
-// ---------- CREATE ----------
+// CREATE 
 app.post('/api/student-portal', (req, res) => {
   const { Fullname, email, matriculationNumber, phone, gender, password, verifypassword } = req.body;
 
@@ -52,12 +52,12 @@ app.post('/api/student-portal', (req, res) => {
   res.status(201).json({ message: 'Student registered successfully.', student: sanitize(newStudent) });
 });
 
-// ---------- READ (all students) ----------
+// READ (all students) 
 app.get('/api/students', (req, res) => {
   res.json(students.map(sanitize));
 });
 
-// ---------- READ (single student) ----------
+// READ (single student)
 app.get('/api/students/:id', (req, res) => {
   const student = students.find(s => s.id === parseInt(req.params.id));
   if (!student) {
@@ -66,7 +66,7 @@ app.get('/api/students/:id', (req, res) => {
   res.json(sanitize(student));
 });
 
-// ---------- UPDATE ----------
+// UPDATE 
 app.put('/api/students/:id', (req, res) => {
   const student = students.find(s => s.id === parseInt(req.params.id));
   if (!student) {
@@ -93,7 +93,7 @@ app.put('/api/students/:id', (req, res) => {
   res.json({ message: 'Student updated successfully.', student: sanitize(student) });
 });
 
-// ---------- DELETE ----------
+// DELETE 
 app.delete('/api/students/:id', (req, res) => {
   const index = students.findIndex(s => s.id === parseInt(req.params.id));
   if (index === -1) {
@@ -102,18 +102,17 @@ app.delete('/api/students/:id', (req, res) => {
 
   const deleted = students.splice(index, 1)[0];
   saveStudents(students); // persist to disk
-
   res.json({ message: 'Student deleted successfully.', student: sanitize(deleted) });
 });
 
-// ---------- helper: strip password before sending back to client ----------
+// Auth: strip password before sending back to client 
 function sanitize(student) {
   const { password, ...others } = student;
   return others;
 }
 
-// ---------- LOGIN ----------
-app.get('/student-portal/login', (req, res) => {
+// LOGIN 
+app.get('/api/student-portal/login', (req, res) => {
   res.render('login');
 });
 
