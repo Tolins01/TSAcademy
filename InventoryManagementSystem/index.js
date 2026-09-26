@@ -2,10 +2,17 @@ const express = require('express');
 const path = require('path');
 const { loadStudents, saveStudents } = require('./db');
 const app = express();
+const dotenv = require('dotenv');
+const connDB = require('./Config/ConfigDataBase');
 const port = 3000;
+
 
 let students = loadStudents(); // load existing data on startup
 let nextId = students.length > 0 ? Math.random() * students[0].id + 1 : 1;
+
+dotenv.config(); // Load environment variables from .env file
+
+connDB(); // Connect to the database
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
